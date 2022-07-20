@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:App2.Models"
+             x:Class="App2.Views.Test">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="ssssss"/>
+            <CarouselView x:Name="_data" PeekAreaInsets="90" HeightRequest="250" BackgroundColor="Red" ItemsUpdatingScrollMode="KeepItemsInView" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" >
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" SnapPointsType="Mandatory" SnapPointsAlignment="Start" />
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Margin="20" HorizontalOptions="FillAndExpand">
+                            <Frame HasShadow="False" x:DataType="model:Monkey"  IsClippedToBounds="True" CornerRadius="7" Padding="0" VerticalOptions="CenterAndExpand" BackgroundColor="#f7f7f7">
+                                <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,0,0,0">
+                                    <Image Aspect="AspectFill" HeightRequest="150" Source="{Binding Image}" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"/>
+                                </AbsoluteLayout>
+                            </Frame>
+                        </StackLayout>                        
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
