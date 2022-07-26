@@ -26,6 +26,7 @@ namespace App2.Views
         {
             InitializeComponent();
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
+
             LoadData();
         }
         protected async void LoadData()
